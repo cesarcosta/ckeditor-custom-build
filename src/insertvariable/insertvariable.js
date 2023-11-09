@@ -27,7 +27,7 @@ export default class InsertVariable extends Plugin {
         this.editor.model.change(writer => {
           const insertPosition =
             this.editor.model.document.selection.getFirstPosition();
-          writer.insertText(id, {bold: true}, insertPosition);
+          writer.insertText(id, insertPosition);
         });
       });
 
