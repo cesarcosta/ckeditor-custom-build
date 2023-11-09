@@ -42,240 +42,250 @@ import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar.js';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation.js';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline.js';
 import LineHeight from './lineheight/lineheight.js';
+import ChangeCase from './changecase/changecase.js';
+import InsertVariable from './insertvariable/insertvariable.js';
+import Code from '@ckeditor/ckeditor5-basic-styles/src/code.js';
 
 class Editor extends DecoupledDocumentEditor {}
 
 // Plugins to include in the build.
 Editor.builtinPlugins = [
-	Alignment,
-	Autoformat,
-	Base64UploadAdapter,
-	BlockQuote,
-	Bold,
-	CloudServices,
-	Essentials,
-	FontBackgroundColor,
-	FontColor,
-	FontFamily,
-	FontSize,
-	Heading,
-	Image,
-	ImageCaption,
-	ImageResize,
-	ImageStyle,
-	ImageToolbar,
-	ImageUpload,
-	Indent,
-	IndentBlock,
-	Italic,
-	Link,
-	List,
-	ListProperties,
-	PageBreak,
-	Paragraph,
-	PasteFromOffice,
-	SourceEditing,
-	Strikethrough,
-	Subscript,
-	Superscript,
-	Table,
-	TableCellProperties,
-	TableColumnResize,
-	TableProperties,
-	TableToolbar,
-	TextTransformation,
-	Underline,
-	LineHeight
+  Alignment,
+  Autoformat,
+  Base64UploadAdapter,
+  BlockQuote,
+  Bold,
+  CloudServices,
+  Essentials,
+  FontBackgroundColor,
+  FontColor,
+  FontFamily,
+  FontSize,
+  Heading,
+  Image,
+  ImageCaption,
+  ImageResize,
+  ImageStyle,
+  ImageToolbar,
+  ImageUpload,
+  Indent,
+  IndentBlock,
+  Italic,
+  Link,
+  List,
+  ListProperties,
+  PageBreak,
+  Paragraph,
+  PasteFromOffice,
+  SourceEditing,
+  Strikethrough,
+  Subscript,
+  Superscript,
+  Table,
+  TableCellProperties,
+  TableColumnResize,
+  TableProperties,
+  TableToolbar,
+  TextTransformation,
+  Underline,
+  LineHeight,
+  ChangeCase,
+  InsertVariable,
+  Code,
 ];
 
 // Editor configuration.
 Editor.defaultConfig = {
-	toolbar: {
-		items: [
-			'sourceEditing',
-			'heading',
-			'|',
-			'fontSize',
-			'fontFamily',
-			'|',
-			'fontColor',
-			'fontBackgroundColor',
-			'|',
-			'bold',
-			'italic',
-			'underline',
-			'strikethrough',
-			'subscript',
-			'superscript',
-			'|',
-			'alignment',
-			'lineHeight',
-			'|',
-			'numberedList',
-			'bulletedList',
-			'|',
-			'outdent',
-			'indent',
-			'|',
-			'link',
-			'blockQuote',
-			'imageUpload',
-			'insertTable',
-			'|',
-			'pageBreak',
-			'undo',
-			'redo'			
-		]
-	},
-	language: 'pt-br',
-	image: {
-		toolbar: [
-			'imageTextAlternative',
-			'toggleImageCaption',
-			'imageStyle:inline',
-			'imageStyle:block',
-			'imageStyle:side'
-		]
-	},
-	table: {
-		contentToolbar: [
-			'tableColumn',
-			'tableRow',
-			'mergeTableCells',
-			'tableCellProperties',
-			'tableProperties'
-		]
-	},
-	fontBackgroundColor: {
-		colors: [
-			{
-				color: '#000000',
-				label: 'Black'
-			},
-			{
-				color: '#696969',
-				label: 'Dim grey'
-			},
-			{
-				color: '#808080',
-				label: 'Grey'
-			},
-			{
-				color: '#D3D3D3',
-				label: 'Light grey'
-			},
-			{
-				color: '#FFFFFF',
-				label: 'White',
-				hasBorder: true
-			},
-			{
-				color: '#FF0000',
-				label: 'Red'
-			},
-			{
-				color: '#FFA500',
-				label: 'Orange'
-			},
-			{
-				color: '#FFFF00',
-				label: 'Yellow'
-			},
-			{
-				color: '#90EE90',
-				label: 'Light green'
-			},
-			{
-				color: '#00FF00',
-				label: 'Green'
-			},
-			{
-				color: '#7fffd4',
-				label: 'Aquamarine'
-			},
-			{
-				color: '#30D5C8',
-				label: 'Turquoise'
-			},
-			{
-				color: '#ADD8E6',
-				label: 'Light blue'
-			},
-			{
-				color: '#0000FF',
-				label: 'Blue'
-			},
-			{
-				color: '#A020F0',
-				label: 'Purple'
-			}
-		]
-	},
-	fontColor: {
-		colors: [
-			{
-				color: '#000000',
-				label: 'Black'
-			},
-			{
-				color: '#696969',
-				label: 'Dim grey'
-			},
-			{
-				color: '#808080',
-				label: 'Grey'
-			},
-			{
-				color: '#D3D3D3',
-				label: 'Light grey'
-			},
-			{
-				color: '#FFFFFF',
-				label: 'White',
-				hasBorder: true
-			},
-			{
-				color: '#FF0000',
-				label: 'Red'
-			},
-			{
-				color: '#FFA500',
-				label: 'Orange'
-			},
-			{
-				color: '#FFFF00',
-				label: 'Yellow'
-			},
-			{
-				color: '#90EE90',
-				label: 'Light green'
-			},
-			{
-				color: '#00FF00',
-				label: 'Green'
-			},
-			{
-				color: '#7fffd4',
-				label: 'Aquamarine'
-			},
-			{
-				color: '#30D5C8',
-				label: 'Turquoise'
-			},
-			{
-				color: '#ADD8E6',
-				label: 'Light blue'
-			},
-			{
-				color: '#0000FF',
-				label: 'Blue'
-			},
-			{
-				color: '#A020F0',
-				label: 'Purple'
-			}
-		]
-  	},
+  toolbar: {
+    items: [
+      'sourceEditing',
+      'heading',
+      '|',
+      'code',
+      'fontSize',
+      'fontFamily',
+      '|',
+      'fontColor',
+      'fontBackgroundColor',
+      '|',
+      'bold',
+      'italic',
+      'underline',
+      'strikethrough',
+      'subscript',
+      'superscript',
+      '|',
+      'alignment',
+      'lineHeight',
+      '|',
+      'numberedList',
+      'bulletedList',
+      '|',
+      'outdent',
+      'indent',
+      '|',
+      'link',
+      'blockQuote',
+      'imageUpload',
+      'insertTable',
+      '|',
+      'pageBreak',
+      'undo',
+      'redo',
+      '|',
+      'changeCase',
+      'insertVariable',
+    ],
+  },
+  language: 'pt-br',
+  image: {
+    toolbar: [
+      'imageTextAlternative',
+      'toggleImageCaption',
+      'imageStyle:inline',
+      'imageStyle:block',
+      'imageStyle:side',
+    ],
+  },
+  table: {
+    contentToolbar: [
+      'tableColumn',
+      'tableRow',
+      'mergeTableCells',
+      'tableCellProperties',
+      'tableProperties',
+    ],
+  },
+  fontBackgroundColor: {
+    colors: [
+      {
+        color: '#000000',
+        label: 'Black',
+      },
+      {
+        color: '#696969',
+        label: 'Dim grey',
+      },
+      {
+        color: '#808080',
+        label: 'Grey',
+      },
+      {
+        color: '#D3D3D3',
+        label: 'Light grey',
+      },
+      {
+        color: '#FFFFFF',
+        label: 'White',
+        hasBorder: true,
+      },
+      {
+        color: '#FF0000',
+        label: 'Red',
+      },
+      {
+        color: '#FFA500',
+        label: 'Orange',
+      },
+      {
+        color: '#FFFF00',
+        label: 'Yellow',
+      },
+      {
+        color: '#90EE90',
+        label: 'Light green',
+      },
+      {
+        color: '#00FF00',
+        label: 'Green',
+      },
+      {
+        color: '#7fffd4',
+        label: 'Aquamarine',
+      },
+      {
+        color: '#30D5C8',
+        label: 'Turquoise',
+      },
+      {
+        color: '#ADD8E6',
+        label: 'Light blue',
+      },
+      {
+        color: '#0000FF',
+        label: 'Blue',
+      },
+      {
+        color: '#A020F0',
+        label: 'Purple',
+      },
+    ],
+  },
+  fontColor: {
+    colors: [
+      {
+        color: '#000000',
+        label: 'Black',
+      },
+      {
+        color: '#696969',
+        label: 'Dim grey',
+      },
+      {
+        color: '#808080',
+        label: 'Grey',
+      },
+      {
+        color: '#D3D3D3',
+        label: 'Light grey',
+      },
+      {
+        color: '#FFFFFF',
+        label: 'White',
+        hasBorder: true,
+      },
+      {
+        color: '#FF0000',
+        label: 'Red',
+      },
+      {
+        color: '#FFA500',
+        label: 'Orange',
+      },
+      {
+        color: '#FFFF00',
+        label: 'Yellow',
+      },
+      {
+        color: '#90EE90',
+        label: 'Light green',
+      },
+      {
+        color: '#00FF00',
+        label: 'Green',
+      },
+      {
+        color: '#7fffd4',
+        label: 'Aquamarine',
+      },
+      {
+        color: '#30D5C8',
+        label: 'Turquoise',
+      },
+      {
+        color: '#ADD8E6',
+        label: 'Light blue',
+      },
+      {
+        color: '#0000FF',
+        label: 'Blue',
+      },
+      {
+        color: '#A020F0',
+        label: 'Purple',
+      },
+    ],
+  },
 };
 
 export default Editor;
