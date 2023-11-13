@@ -42,6 +42,9 @@ export default class ChangeCase extends Plugin {
 
     this.editor.ui.componentFactory.add('changeCase', locale => {
       const dropdownView = createDropdown(locale);
+
+      dropdownView.class = 'ck-dropdown-change-case';
+
       dropdownView.buttonView.set({
         label: 'Aa',
         withText: true,
@@ -54,6 +57,7 @@ export default class ChangeCase extends Plugin {
           id: 'uppercase',
           withText: true,
           label: 'Maiúsculo',
+          class: 'ck-button-change-case'
         }),
       });
 
@@ -63,6 +67,7 @@ export default class ChangeCase extends Plugin {
           id: 'lowercase',
           withText: true,
           label: 'Minúsculo',
+          class: 'ck-button-change-case'
         }),
       });
 

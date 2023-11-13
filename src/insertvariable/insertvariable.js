@@ -12,6 +12,9 @@ export default class InsertVariable extends Plugin {
 
     this.editor.ui.componentFactory.add('insertVariable', locale => {
       const dropdownView = createDropdown(locale);
+
+      dropdownView.class = 'ck-dropdown-change-case';
+          
       dropdownView.buttonView.set({
         label: 'Variáveis',
         withText: true,
@@ -37,7 +40,7 @@ export default class InsertVariable extends Plugin {
 
   loadVariables(options) {
     if (!options) {
-      return;
+      return [];
     }
 
     const items = new Collection();
@@ -49,6 +52,7 @@ export default class InsertVariable extends Plugin {
           id: item.key,
           withText: true,
           label: item.value,
+          class: 'ck-button-insert-variable'
         }),
       });
     });
