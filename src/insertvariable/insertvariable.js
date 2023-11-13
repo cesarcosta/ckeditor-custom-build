@@ -13,7 +13,7 @@ export default class InsertVariable extends Plugin {
     this.editor.ui.componentFactory.add('insertVariable', locale => {
       const dropdownView = createDropdown(locale);
 
-      dropdownView.class = 'ck-dropdown-change-case';
+      dropdownView.class = 'ck-dropdown-insert-variable';
           
       dropdownView.buttonView.set({
         label: 'Variáveis',
