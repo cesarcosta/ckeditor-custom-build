@@ -43,7 +43,7 @@ import LineHeight from './lineheight/lineheight.js';
 import ChangeCase from './changecase/changecase.js';
 import InsertVariable from './insertvariable/insertvariable.js';
 import Code from '@ckeditor/ckeditor5-basic-styles/src/code.js';
-import { DocumentList } from '@ckeditor/ckeditor5-list';
+import { DocumentList, DocumentListProperties } from '@ckeditor/ckeditor5-list';
 
 class Editor extends DecoupledDocumentEditor {}
 
@@ -89,7 +89,8 @@ Editor.builtinPlugins = [
   ChangeCase,
   InsertVariable,
   Code,
-  DocumentList
+  DocumentList,
+  DocumentListProperties
 ];
 
 // Editor configuration.
