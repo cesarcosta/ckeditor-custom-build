@@ -25,6 +25,8 @@ import Indent from '@ckeditor/ckeditor5-indent/src/indent.js';
 import IndentBlock from '@ckeditor/ckeditor5-indent/src/indentblock.js';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic.js';
 import Link from '@ckeditor/ckeditor5-link/src/link.js';
+import List from '@ckeditor/ckeditor5-list/src/list.js';
+import ListProperties from '@ckeditor/ckeditor5-list/src/listproperties.js';
 import PageBreak from '@ckeditor/ckeditor5-page-break/src/pagebreak.js';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph.js';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice.js';
@@ -43,7 +45,6 @@ import LineHeight from './lineheight/lineheight.js';
 import ChangeCase from './changecase/changecase.js';
 import InsertVariable from './insertvariable/insertvariable.js';
 import Code from '@ckeditor/ckeditor5-basic-styles/src/code.js';
-import { DocumentList } from '@ckeditor/ckeditor5-list';
 
 class Editor extends DecoupledDocumentEditor {}
 
@@ -71,6 +72,8 @@ Editor.builtinPlugins = [
   IndentBlock,
   Italic,
   Link,
+  List,
+  ListProperties,
   PageBreak,
   Paragraph,
   PasteFromOffice,
@@ -89,7 +92,6 @@ Editor.builtinPlugins = [
   ChangeCase,
   InsertVariable,
   Code,
-  DocumentList
 ];
 
 // Editor configuration.
@@ -116,6 +118,9 @@ Editor.defaultConfig = {
       'alignment',
       'lineHeight',
       '|',
+      'numberedList',
+      'bulletedList',
+      '|',
       'outdent',
       'indent',
       '|',
@@ -130,9 +135,6 @@ Editor.defaultConfig = {
       '|',
       'changeCase',
       'insertVariable',
-      '|',
-      'bulletedList', 
-      'numberedList'
     ],
   },
   language: 'pt-br',
