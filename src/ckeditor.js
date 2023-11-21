@@ -44,6 +44,12 @@ import ChangeCase from './changecase/changecase.js';
 import InsertVariable from './insertvariable/insertvariable.js';
 import Code from '@ckeditor/ckeditor5-basic-styles/src/code.js';
 import { DocumentList, DocumentListProperties } from '@ckeditor/ckeditor5-list';
+import { Highlight } from '@ckeditor/ckeditor5-highlight';
+import { HorizontalLine } from '@ckeditor/ckeditor5-horizontal-line';
+import { RemoveFormat } from '@ckeditor/ckeditor5-remove-format';
+import { SelectAll } from '@ckeditor/ckeditor5-select-all';
+import { WordCount } from '@ckeditor/ckeditor5-word-count';
+import { FindAndReplace } from '@ckeditor/ckeditor5-find-and-replace';
 
 class Editor extends DecoupledDocumentEditor {}
 
@@ -90,7 +96,13 @@ Editor.builtinPlugins = [
   InsertVariable,
   Code,
   DocumentList,
-  DocumentListProperties
+  DocumentListProperties,
+  RemoveFormat,
+  SelectAll,
+  Highlight,
+  HorizontalLine,
+  FindAndReplace,
+  WordCount
 ];
 
 // Editor configuration.
@@ -101,6 +113,7 @@ Editor.defaultConfig = {
       'heading',
       '|',
       'code',
+			'selectAll',
       'fontSize',
       'fontFamily',
       '|',
@@ -128,12 +141,17 @@ Editor.defaultConfig = {
       'imageUpload',
       'insertTable',
       '|',
-      'pageBreak',
       'undo',
       'redo',
       '|',
       'changeCase',
       'insertVariable',
+      '|',
+      'horizontalLine',
+			'pageBreak',
+			'removeFormat',
+      'highlight',
+			'findAndReplace',
     ],
   },
   language: 'pt-br',
