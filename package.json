@@ -2,7 +2,7 @@
   "name": "ckeditor-custom-build-line-height",
   "author": "CKSource",
   "description": "A custom CKEditor 5 build made by the CKEditor 5 online builder and added Line Height plugin.",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "license": "SEE LICENSE IN LICENSE.md",
   "private": false,
   "main": "./build/ckeditor.js",
@@ -43,5 +43,12 @@
     "build": "webpack --mode production",
     "build-dev": "webpack --mode development",
     "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "@ckeditor/ckeditor5-find-and-replace": "^40.1.0",
+    "@ckeditor/ckeditor5-highlight": "^40.1.0",
+    "@ckeditor/ckeditor5-horizontal-line": "^40.1.0",
+    "@ckeditor/ckeditor5-remove-format": "^40.1.0",
+    "@ckeditor/ckeditor5-word-count": "^40.1.0"
   }
 }
